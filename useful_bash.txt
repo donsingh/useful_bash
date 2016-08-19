@@ -23,3 +23,9 @@ xinput --set-props "11" "Device Constant Accel Deceleration" 0.33
 2 - sudo ntfsfix -d /dev/sdXY
 
 
+//Find a specific text in a lot of files
+grep -irl foo*
+
+//See whats hogging memory!
+ps aux | awk '{if ($5 != 0 ) print $2,$5,$6,$11}' | sort -k2n
+
