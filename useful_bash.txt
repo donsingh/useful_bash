@@ -12,4 +12,14 @@ mogrify -resize 1366x768 *.jpg
 //Resize and ignore original aspect ratio
 mogrify -resize 1366x768! *.jpg
 
+//Thinkpad mouse sensitivity
+xinput --set-props "11" "Device Constant Accel Deceleration" 0.33
+
+	Use "xinput list-prop X" to see X's properties
+	Use "xinput list" to see all xinput devices
+
+//To clean ntfs-dirty flag
+1 - Run "lsblk" and find /dev/sdXY of ntfs device
+2 - sudo ntfsfix -d /dev/sdXY
+
 
