@@ -1,0 +1,15 @@
+Here are some really useful bash-oneliners I find forgetting!
+
+//Converting Multiple videos to mp4 in same directory
+for f in *.MOV; do ffmpeg -i "$f" -vcodec copy -acodec aac -strict -2 "${f%.MOV}.mp4"; done
+
+//Replacing spaces in filename with underscores. replace "f" with "d" to work on directories!
+find -name "* *" -type f |rename 's/ /_/g'
+
+//Resize image and replace original
+mogrify -resize 1366x768 *.jpg
+
+//Resize and ignore original aspect ratio
+mogrify -resize 1366x768! *.jpg
+
+
