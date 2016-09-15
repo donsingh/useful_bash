@@ -3,6 +3,9 @@ Here are some really useful bash-oneliners I find forgetting!
 //Converting Multiple videos to mp4 in same directory
 for f in *.MOV; do ffmpeg -i "$f" -vcodec copy -acodec aac -strict -2 "${f%.MOV}.mp4"; done
 
+//Basic Compression(untested but works!)
+for f in *.MOV; do ffmpeg -i "$f" -c:v libx264 -preset slow -crf 18 -c:a libvorbis -q:a 5 -pix_fmt yuv420p "${f%.MOV}.avi"; done
+
 //Replacing spaces in filename with underscores. replace "f" with "d" to work on directories!
 find -name "* *" -type f |rename 's/ /_/g'
 
