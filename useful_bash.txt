@@ -34,3 +34,5 @@ ps aux | awk '{if ($5 != 0 ) print $2,$5,$6,$11}' | sort -k2n
 
 //Switch to a local branch downloaded from upstream and track it remotely
 git checkout -b test origin/test
+
+//Lacks mass rename and mass move
